@@ -18,7 +18,7 @@ func StartGrpcServer(database *gorm.DB, port int) {
 	reflection.Register(grpcServer)
 
 	pixRepository := repository.PixKeyRepositoryDb{Db: database}
-	pixUseCase := usecase.PixUseCase{PixKeyRepository: pixRepository}
+	pixUseCase := usecase.PixUseCase{PixRepository: pixRepository}
 	pixGrpcService := NewPixGrpcService(pixUseCase)
 	pb.RegisterPixServiceServer(grpcServer, pixGrpcService)
 
