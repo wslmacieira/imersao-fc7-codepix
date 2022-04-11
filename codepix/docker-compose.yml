@@ -33,7 +33,7 @@ services:
     depends_on:
       - db
 
-networks:
-  default:
-    external:
-      name: apache-kafka_default
+# networks:
+#   default:
+#     external:
+#       name: apache-kafka_default
